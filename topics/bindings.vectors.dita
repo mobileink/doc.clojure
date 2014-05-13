@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="destruct-vector">
+  <title>Vector Destructuring</title>
+
+  <!-- <prolog> -->
+  <!--   <metadata> -->
+  <!--     <keywords> -->
+  <!-- 	<indexterm>Vector Destructuring</indexterm> -->
+  <!--     </keywords> -->
+  <!--   </metadata> -->
+  <!-- </prolog> -->
+
+
+  <body>
+    <p>
+      Vector binding-exprs allow you to bind names to parts of
+      sequential things (not just vectors), like vectors, lists,
+      seqs, strings, arrays, and anything that supports nth. The
+      basic sequential form is a vector of binding-forms, which will
+      be bound to successive elements from the init-expr, looked up
+      via <codeph>nth</codeph>. In addition, and optionally, &amp;
+      followed by a binding-form will cause that binding-form to be
+      bound to the remainder of the sequence, i.e. that part not yet
+      bound, looked up via nthnext .
+    </p>
+
+    <p>
+      Finally, also optional, <codeph>:as</codeph> followed by a
+      symbol will cause that symbol to be bound to the entire
+      init-expr:
+    </p>
+
+    <codeblock>
+      (let [[a b c &amp; d :as e] [1 2 3 4 5 6 7]]
+      [a b c d e])
+      
+      ->[1 2 3 (4 5 6 7) [1 2 3 4 5 6 7]]
+    </codeblock>
+
+    <p>These forms can be nested:</p>
+    
+    <codeblock>
+      (let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]
+      [x1 y1 x2 y2])
+      
+      ->[1 2 3 4]
+    </codeblock>
+
+    <p>Strings work too:</p>
+
+    <codeblock>
+      (let [[a b &amp; c :as str] "asdjhhfdas"]
+      [a b c str])
+      
+      ->[\a \s (\d \j \h \h \f \d \a \s) "asdjhhfdas"]
+    </codeblock>
+
+
+    <section>
+      <title>Examples</title>
+
+      <p>
+	Suppose you had a vector <codeph>v == [1 2]</codeph> and you
+	wanted to work with its elements in a binding context
+	(<codeph>let</codeph> or function body).  Without structural
+	binding, you would have to destructure <codeph>v</codeph> by
+	hand, as it were, and explicitly project its elements into the
+	local environment.  For example:
+      </p>
+
+      <codeblock>
+(def v [1 2])
+...
+(let [a (nth v 0)
+      b (nth v 1)]
+  ;; do something with a and b
+  )
+      </codeblock>
+
+      <p>
+	This works, but it would be cumbersome with larger or more
+	complex structures.  Structural binding constructors make such
+	"destructuring" a snap:
+      </p>
+
+      <codeblock>
+(let [[a b] v]
+  ;; do something with a and b
+  )
+      </codeblock>
+
+      <p>
+	Notice the structural parallel between the input datum - a
+	vector of ints <codeph>[1 2]</codeph> - and the structure with
+	which it is paired by the binding - another vector of the same
+	length (<codeph>[a b]</codeph>), but whose elements are
+	symbols (i.e. names).  What makes this work is that the
+	binding logic can use <codeph>nth</codeph> behind the scenes
+	to iterate over the contents of <codeph>v</codeph> and project
+	them to the corresponding elements of <codeph>[a b]</codeph>,
+	much like we did by hand in the previous example.
+      </p>
+
+      <p>
+	A critical point is that even though <codeph>a</codeph> and
+	<codeph>b</codeph> are embedded <i>syntactically</i> in a
+	vector in the binding constructor, they can be directly used
+	in the local environment.  You do not have to use
+	<codeph>nth</codeph> to get at <codeph>a</codeph> and
+	<codeph>b</codeph>.  So not only does the binding mechanism
+	"transport" data from an incoming structure to a local
+	structure (namely <codeph>[a b]</codeph>), it also, in turn,
+	projects the components of that local structure into the local
+	environment.  So it "transports" (i.e. binds) 1 to a, and then
+	"transports" a from its vectorial starting point to the local
+	environment.
+      </p>
+      
+
+    </section>
+
+  </body>
+</topic>

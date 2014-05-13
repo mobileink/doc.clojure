@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../dtd/concept.dtd">
+<concept id="Xbindings" xml:lang="en-us">
+  <title>Bindings</title>
+  <shortdesc>
+    Bindings are Clojure's way of doing osmosis.
+  </shortdesc>
+
+  <conbody>
+
+    <p>Bindings are:</p>
+
+    <ul>
+      <li>A Trojan horse that spills hordes of data into the streets of Illium</li>
+      <li>A Robin Hood, that breaks open the treasure chests of traveling data and distributes the contents to the locals</li>
+      <li>Che! a liberator that rips open stodgy ol' data structures and liberates the data</li>
+      <li>A transport mechanism for shuttling information from the
+      outside world into closed computations like <codeph>let</codeph>
+      and function bodies</li>
+      <li>Actually, just a function from names to values</li>
+    </ul>
+
+  </conbody>
+</concept>

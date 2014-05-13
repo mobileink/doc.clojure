@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
 "http://docs.oasis-open.org/dita/dtd/topic.dtd">
-<topic id="backend">
-  <title>Unit Testing</title>
+<topic id="bindings-simple">
+  <title>Simple Bindings</title>
 
-  <prolog>			<!-- OPTIONAL -->
+  <prolog>
     <metadata>
       <keywords>
-	<indexterm>Testing<indexterm>unit</indexterm></indexterm>
+  	<indexterm>Bindings, simple</indexterm>
       </keywords>
     </metadata>
   </prolog>
 
+
   <body>
     <p>
-      Unit testing with Clojure is easy!  blah blah ...
-
+      Simple bindings ...
     </p>
+
+    <p>
+      For example:
+    </p>
+
+    <codeblock>
+user=> (let [a 1 b 2 c 3] [a b c])
+[1 2 3]
+    </codeblock>
 
   </body>
 

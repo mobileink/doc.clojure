@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="destruct-nested">
+  <title>Nested Destructuring</title>
+
+  <prolog>
+    <metadata>
+      <keywords>
+	<indexterm>Binding form</indexterm>
+	<indexterm>Nested Destructuring</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+
+
+  <body>
+    <p>
+      Since binding forms can be nested within one another
+      arbitrarily, you can pull apart just about anything:
+    </p>
+
+    <codeblock>
+      (let [{j :j, k :k, i :i, [r s &amp; t :as v] :ivec, :or {i 12 j 13}}
+      {:j 15 :k 16 :ivec [22 23 24 25]}]
+      [i j k r s t v])
+      
+      -> [12 15 16 22 23 (24 25) [22 23 24 25]]	
+    </codeblock>
+
+  </body>
+
+  <related-links>
+    <!-- <link href="foo.dita"> -->
+    <!--   <linktext/> -->
+    <!-- </link> -->
+  </related-links>
+</topic>

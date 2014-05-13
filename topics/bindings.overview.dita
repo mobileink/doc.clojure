@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../dtd/concept.dtd">
+<concept id="bindings-overview" xml:lang="en-us">
+  <title>Overview</title>
+  <shortdesc>
+    A binding is a function from names to values.
+  </shortdesc>
+
+  <conbody>
+
+    <p>
+      Clojure says:  <codeph>binding => binding-form init-expr</codeph>
+    </p>
+    
+    <p>
+      Z says: a <i>binding</i> is a "finite function from names to values".  A set of bindings is a <i>schema</i>
+    </p>
+
+    <p>
+      Z uses a special symbol for bindings: (\u2989 Z NOTATION LEFT
+      BINDING BRACKET) and (\u298A Z NOTATION RIGHT BINDING
+      BRACKET).  So a <i>binding construction</i> expression looks like &lt;| foo bar |>.
+    </p>
+
+    <p>I find Clojure's terminology ("binding-form") a little
+    confusing so I'm going to stick with Z, and say a binding is a
+    pair of a name and a value expression, with the result being a
+    bound name or variable.  (Plus, the Clojure doc is slightly
+    inconsistent between "binding-form" and "binding symbol".)  Ah,
+    but the reason for "binding-form" is that you can use structures
+    instead of names, to get indirect binding.
+    </p>
+
+    <p>
+      blah blah
+    </p>
+
+    <section>
+      <title>Binding Construction</title>
+
+      <p>
+	A binding is a function from names to values, i.e. a set of
+	ordered pairs.  Bindings are <i>expressed</i> via <i>binding
+	construction expressions</i>, or binding constructors for
+	short.  So we need to make a distinction between the binding
+	and the expression.  Z notation is useful since it provides a
+	rigorously defined, minimal notation for semantics: to say
+	that 2 is bound to x you write <codeph>&lt;|a=2|></codeph>, no
+	matter how that was expressed syntactically.
+      </p>
+
+      <p>
+	The simplest binding constructor just pairs a name
+	(technically, a symbol) and a (simple) value, just like the Z
+	notation: <codeph>(let [a 1]...) == &lt;|a=1|></codeph>.
+	Slighly more complex constructors can use complex expressions
+	on the value side, as in <codeph>(let [foo (+ 1 2)] ...) ==
+	&lt;|foo=3|></codeph>.  More complex yet, binding constructors
+	can also put complex expressions on both sides, thus pairing
+	name and value <i>structures</i>; examples below.
+      </p>
+
+    </section>
+
+    <section>
+      <title>Binding Contexts</title>
+
+      <ul>
+	<li><codeph>let</codeph></li>
+	<li>function parameter definitions</li>
+	<li>macros that expand into <codeph>let</codeph> or function expressions</li>
+      </ul>
+    </section>
+
+  </conbody>
+</concept>

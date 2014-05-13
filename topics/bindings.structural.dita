@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="bindings-structural">
+  <title>Structural Bindings</title>
+
+  <prolog>
+    <metadata>
+      <keywords>
+  	<indexterm>Binding form</indexterm>
+  	<indexterm>Binding, structural</indexterm>
+  	<indexterm>Destructuring</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+
+
+  <body>
+    <p>
+      Clojure supports abstract structural binding, often called
+      destructuring, in let binding lists, fn parameter lists, and any
+      macro that expands into a let or fn. The basic idea is that a
+      binding-form can be a data structure literal containing symbols
+      that get bound to the respective parts of the init-expr. The
+      binding is abstract in that a vector literal can bind to
+      anything that is sequential, while a map literal can bind to
+      anything that is associative.
+    </p>
+
+  </body>
+
+</topic>
