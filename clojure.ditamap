@@ -2,12 +2,11 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
  "/usr/local/DITA/dtd/bookmap/dtd/bookmap.dtd">
 <bookmap chunk="by-document">
-  <!-- <title>Leiningen User&#x2019;s Guide</title> -->
+  <!-- <title>Clojure User&#x2019;s Guide</title> -->
   <booktitle>
-    <!-- <booklibrary>Leiningen Documentation</booklibrary> -->
-    <mainbooktitle>Malleus Formicarum</mainbooktitle>
-    <booktitlealt><i>or,</i> The Ants Hammer</booktitlealt>
-    <booktitlealt>Leiningen Users Guide</booktitlealt>
+    <booklibrary>Clojure Documentation</booklibrary>
+    <mainbooktitle>Clojure</mainbooktitle>
+    <booktitlealt>Clojure Users Guide</booktitlealt>
   </booktitle>
 
   <bookmeta>
@@ -31,7 +30,7 @@
     </authorinformation>
 
     <critdates>
-      <created date="2013-08-30" golive=""/>
+      <created date="2014-05-13" golive=""/>
     </critdates>
 
       <bookid>
@@ -43,8 +42,8 @@
 	</maintainer>
       </bookid>
       <bookrights>
-	<copyrfirst><year>2013</year></copyrfirst>
-	<!-- <copyrlast><year>2013</year></copyrlast> -->
+	<copyrfirst><year>2014</year></copyrfirst>
+	<!-- <copyrlast><year>2014</year></copyrlast> -->
 	<bookowner>
 	  <person>Gregg Reynolds</person>
 	  <!-- <organization>Retro Tools, Inc.</organization> -->
@@ -70,7 +69,7 @@
       <topicref chunk="to-content"
 		href="ug/trademarks.dita"></topicref>
     </notices>
-    <preface navtitle="About Leiningen">
+    <preface navtitle="About Clojure">
       <!-- <topicref chunk="to-content" -->
       <!-- 		href="ug/ug-preface.dita"></topicref> -->
       <topicref chunk="to-content"
@@ -86,7 +85,7 @@
       <topicref href="ug/ccc-solution.dita"/>
     </chapter>
 
-    <chapter navtitle="What is Leiningen?"
+    <chapter navtitle="What is Clojure?"
 		href="ug/whatislein.dita">
       <topicref chunk="to-content"
 		href="ug/structndyn.dita">
@@ -123,79 +122,81 @@
   <!-- </part> -->
 
   <!-- ################################################################ -->
-  <part chunk="to-content" navtitle="Using Leiningen">
+  <part chunk="to-content" navtitle="Using Clojure">
+
     <chapter chunk="to-content"
-	     href="ug/parms.dita">
+	     href="topic/destructuring.dita">
+    </chapter>
+
+    <!-- <chapter chunk="to-content" href="ug/silp.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="ug/map-project.dita"> -->
+    <!--   <topicref href="ug/profiles.dita"> -->
+    <!-- 	<topicref href="ug/profiles-system.dita"/> -->
+    <!-- 	<topicref href="ug/profiles-user.dita"/> -->
+    <!--   </topicref> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="ug/commands.dita"> -->
+    <!--   <topicref href="ug/commands-defaults.dita"/> -->
+    <!--   <topicref href="ug/plugins.dita"/> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="ug/deps.dita"> -->
+    <!--   <topicref href="ug/deps-tree.dita"/> -->
+    <!--   <topicref href="ug/deps-ns.dita"/> -->
+    <!--   <topicref href="ug/classpath.dita"/> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="ug/repos.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="ug/templates.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="ug/repl.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="ug/trampolines.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="ug/testing.dita"> -->
+    <!--   <topicref href="ug/testing-unit.dita"> -->
+    <!-- 	<topicref href="ug/testing-unit-concepts.dita"/> -->
+    <!-- 	<topicref href="ug/testing-unit-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!--   <topicref href="ug/testing-system.dita"> -->
+    <!-- 	<topicref href="ug/testing-system-concepts.dita"/> -->
+    <!-- 	<topicref href="ug/testing-system-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!--   <topicref href="ug/testing-ci.dita"> -->
+    <!-- 	<topicref href="ug/testing-ci-concepts.dita"/> -->
+    <!-- 	<topicref href="ug/testing-ci-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="ug/deployment.dita"> -->
       <!-- <topicref href="ug/config.dita"/> -->
-    </chapter>
-
-    <chapter chunk="to-content" href="ug/silp.dita">
-    </chapter>
-
-    <chapter chunk="to-content" href="ug/map-project.dita">
-      <topicref href="ug/profiles.dita">
-	<topicref href="ug/profiles-system.dita"/>
-	<topicref href="ug/profiles-user.dita"/>
-      </topicref>
-    </chapter>
-
-    <chapter chunk="to-content" href="ug/commands.dita">
-      <topicref href="ug/commands-defaults.dita"/>
-      <topicref href="ug/plugins.dita"/>
-    </chapter>
-    <chapter chunk="to-content"
-	     href="ug/deps.dita">
-      <topicref href="ug/deps-tree.dita"/>
-      <topicref href="ug/deps-ns.dita"/>
-      <topicref href="ug/classpath.dita"/>
-    </chapter>
-    <chapter chunk="to-content" href="ug/repos.dita">
-    </chapter>
-
-    <chapter chunk="to-content" href="ug/templates.dita">
-    </chapter>
-    <chapter chunk="to-content" href="ug/repl.dita">
-    </chapter>
-    <chapter chunk="to-content" href="ug/trampolines.dita">
-    </chapter>
-
-    <chapter chunk="to-content" href="ug/testing.dita">
-      <topicref href="ug/testing-unit.dita">
-	<topicref href="ug/testing-unit-concepts.dita"/>
-	<topicref href="ug/testing-unit-proc.dita"/>
-      </topicref>
-      <topicref href="ug/testing-system.dita">
-	<topicref href="ug/testing-system-concepts.dita"/>
-	<topicref href="ug/testing-system-proc.dita"/>
-      </topicref>
-      <topicref href="ug/testing-ci.dita">
-	<topicref href="ug/testing-ci-concepts.dita"/>
-	<topicref href="ug/testing-ci-proc.dita"/>
-      </topicref>
-    </chapter>
-
-    <chapter chunk="to-content"
-	     href="ug/deployment.dita">
-      <!-- <topicref href="ug/config.dita"/> -->
-    </chapter>
+    <!-- </chapter> -->
   </part>
 
   <!-- ################################################################ -->
-  <part chunk="to-content" navtitle="Extending Leiningen">
+  <part chunk="to-content" navtitle="Extending Clojure: Macros">
     <chapter chunk="to-content"
 	     href="ug/dev-templates.dita">
     </chapter>
-    <chapter chunk="to-content"
-	     href="ug/dev-plugins.dita">
-    </chapter>
-    <chapter chunk="to-content"
-	     href="ug/dev-profiles.dita">
-    </chapter>
-    <chapter chunk="to-content"
-	     href="ug/dev-embed.dita">
-    </chapter>
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="ug/dev-plugins.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="ug/dev-profiles.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="ug/dev-embed.dita"> -->
+    <!-- </chapter> -->
   </part>
 
+  <!-- ################################################################ -->
+  <!-- ################################################################ -->
   <appendices chunk="to-content" toc="yes">
     <topicmeta>
       <navtitle>Appendices</navtitle>
